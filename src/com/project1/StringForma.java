@@ -9,43 +9,40 @@ import java.util.regex.Pattern;
 public class StringForma {
 
 
-    public  String getPlateNo() throws Exception {
+    public  String getPlateNo()  {
 
-        int count = 0;
-        int maxTries = 3;
-        while(true) {
-            try {
-                // Some Code
-                // break out of loop, or return, on success
-            } catch (SomeException e) {
-                // handle exception
-                if (++count == maxTries) throw e;
-            }
-        }
+
+        boolean match ;
+        String retVal ;
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Please enter your license plate number.");
-        System.out.println("License plate number: ");
-
-        String plateNo = sc.nextLine();
-
         Pattern p = Pattern.compile("[A-Z]{3}-[0-9]{4}");
 
-        Matcher m = p.matcher(plateNo);
+        do {
 
-        boolean match = m.matches();
+                System.out.println("Please enter your license plate number.");
+                System.out.println("(Plate Number must be in the form of 'ABC-1234')");
+                System.out.println("License plate number: ");
 
+                String plateNo = sc.nextLine();
 
-        if (match) {
+                Matcher m = p.matcher(plateNo);
 
-            return plateNo ;
+                match = m.matches();
 
-        } else {
+                if (match) {
+                    retVal = plateNo; }
 
-            System.out.println("Plate Number must be in the form of ABC-1234");
-            throw new Exception("InvalidPlateNoFormat");
+                else {
 
-        }
+                    System.err.println("Error:Invalid Plate Number!");
+                    retVal = null;
+
+                }
+
+        } while (match==false);
+
+        return retVal ;
+
     }
 }
