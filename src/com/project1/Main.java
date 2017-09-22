@@ -25,7 +25,7 @@ public class Main {
         String filename = "src/VehiclesData.csv";
         DateTimeFormatter df = DateTimeFormatter.ofPattern("d/M/yyyy");
         File file = new File(filename);
-        List<Row> rows = new ArrayList<Row>();
+        List<Row> rows = new ArrayList<>();
         int count = 1;
 
         try {
@@ -66,9 +66,12 @@ public class Main {
 //        Row row1 = (Row)list.get(1); // explicit cast
 //        System.out.println(row1.getPlate());
 
+        System.out.println("| " + "Plate No" +" | "+ "Owner Num" +" | "+ "   Date   " + " |");
+        System.out.println();
         for (int i = 0; i < rows.size(); i++) {
-            System.out.println(rows.get(i).getPlate() +"  "+ rows.get(i).getOwner() +"  "+ rows.get(i).getDate());
+            System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
         }
+
     }
 }
 
