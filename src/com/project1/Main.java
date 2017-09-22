@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.lang.Integer;
 
@@ -21,9 +23,12 @@ public class Main {
 //      int days = i.getDaysToExpire();
 //      System.out.println("Days ti expire are: " + days) ;
 
+
+
         String filename = "src/VehiclesData.csv";
         DateTimeFormatter df = DateTimeFormatter.ofPattern("d/M/yyyy");
         File file = new File(filename);
+        List<Row> list = new ArrayList<Row>();
         int count = 1;
 
         try {
@@ -38,8 +43,13 @@ public class Main {
 
                 LocalDate date = LocalDate.parse(values[2], df);
 
-                System.out.println(count + "  " + plates + "  " + owner + "  " + date);
-                count++;
+                Row row = new Row(plates,owner,date);
+
+                list.add(row);
+
+//                System.out.println(count + "  " + plates + "  " + owner + "  " + date);
+//                count++;
+
 
             }
         } catch (FileNotFoundException fe) {
@@ -49,6 +59,11 @@ public class Main {
             System.err.println("Invalid CSV format at line " + count + "!");
 
         }
+//
+          list.sort();
+//        Row row1 = (Row)list.get(98); // explicit cast
+//        System.out.println(row1.getPlate());
+
     }
 
 }
