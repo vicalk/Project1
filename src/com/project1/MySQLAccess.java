@@ -41,7 +41,7 @@ public class MySQLAccess {
             preparedStatement.executeUpdate();
 
             preparedStatement = connect
-                    .prepareStatement("SELECT myuser, webpage, datum, summary, COMMENTS from feedback.comments");
+                    .prepareStatement("SELECT myuser, webpage, datum, summary, COMMENTS from insurance.insurance");
             resultSet = preparedStatement.executeQuery();
             writeResultSet(resultSet);
 

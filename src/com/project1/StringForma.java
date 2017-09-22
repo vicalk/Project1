@@ -40,7 +40,7 @@ public class StringForma {
 
                 }
 
-        } while (match==false);
+        } while (!match);
 
         return retVal ;
 
