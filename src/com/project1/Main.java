@@ -74,7 +74,7 @@ public class Main {
         for (int i = 0; i < rows.size(); i++) {
             System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
         }
-///////////////////////////////////////////////
+///////////////////////////////////////////////        OUTPUT CSV
         String filenameOut = "src//Out.csv";
 
         BufferedWriter writer = null;
@@ -100,11 +100,14 @@ public class Main {
 
             System.out.println(sb.toString());
             writer.write(sb.toString());
+
+            writer.close();
+
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        writer.close();
-//        inputStream.close();
+
+       //inputStream.close();
     }
 
 
