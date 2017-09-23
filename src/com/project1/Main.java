@@ -1,6 +1,7 @@
 package com.project1;
 
-
+import java.io.*;
+import java.io.Writer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -9,6 +10,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.lang.Integer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +25,7 @@ public class Main {
 //      System.out.println("Days ti expire are: " + days) ;
 
 
-        String filename = "src/VehiclesData.csv";
+        String filename = "src//VehiclesData.csv";
         DateTimeFormatter df = DateTimeFormatter.ofPattern("d/M/yyyy");
         File file = new File(filename);
         List<Row> rows = new ArrayList<>();
@@ -71,9 +74,47 @@ public class Main {
         for (int i = 0; i < rows.size(); i++) {
             System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
         }
+///////////////////////////////////////////////
+        String filenameOut = "src//Out.csv";
+
+        BufferedWriter writer = null;
+
+        File fileout = new File(filenameOut);
+        try {
+
+            writer = new BufferedWriter(new FileWriter(filenameOut));
+
+
+        } catch (IOException e) {
+        }
+        try {
+            // iterate through the values and build a string out of them
+            StringBuilder sb = new StringBuilder();
+
+            //  String newData = sb.toString();
+            for (int i = 0; i < rows.size(); i++) {
+                sb.append(rows.get(i).getPlate()+";"+rows.get(i).getOwner()+";"+rows.get(i).getDate()+"\n");}
+
+
+            // get the new string
+
+            System.out.println(sb.toString());
+            writer.write(sb.toString());
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        writer.close();
+//        inputStream.close();
+    }
+
+
+
+
+
+
 
     }
-}
+
 
 
 
