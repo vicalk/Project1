@@ -1,17 +1,12 @@
 package com.project1;
 
-import java.io.*;
-import java.io.Writer;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.lang.Integer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 public class ImportCSV {
