@@ -52,6 +52,7 @@ public class Main {
 
 
             }
+            inputsStream.close();
         } catch (FileNotFoundException fe) {
             System.err.println("Invalid file path!");
 
@@ -79,7 +80,7 @@ public class Main {
 
         BufferedWriter writer = null;
 
-        File fileout = new File(filenameOut);
+
         try {
 
             writer = new BufferedWriter(new FileWriter(filenameOut));
