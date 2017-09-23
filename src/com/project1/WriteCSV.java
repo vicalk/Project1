@@ -46,7 +46,7 @@ public class WriteCSV {
 
             // get the new string
 
-            System.out.println(sb.toString());
+            //System.out.println(sb.toString());
             writer.write(sb.toString());
 
             writer.close();

@@ -54,7 +54,7 @@ public class ImportCSV {
 
         } catch (Exception e) {
             System.err.println("Invalid CSV format at line " + count + "!");
-            return null;
+            return rows;
 
         }
     }
