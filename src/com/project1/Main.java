@@ -28,13 +28,13 @@ public class Main {
 
         /////////////////////////////    Import CSV (output list of row objects)   /////////////////////////////
 
-//
-      ImportCSV im =  new ImportCSV();
-      List<Row> rows = im.importCSV();
-//
-//
-      Collections.sort(rows);                 //sorts all the rows ascending (depending on plate number)
-//
+////
+//      ImportCSV im =  new ImportCSV();
+//      List<Row> rows = im.importCSV();
+////
+////
+//      Collections.sort(rows);                 //sorts all the rows ascending (depending on plate number)
+////
 //
 //        for (int i = 0; i < rows.size(); i++) {
 //           System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
@@ -45,15 +45,13 @@ public class Main {
 //      /////////////////////////////   Write CSV file    /////////////////////////////////////////////
 //
 //        WriteCSV w =  new WriteCSV();
-//        w.writeCSV(rows);
+////        w.writeCSV(rows);
+////
+////
+//        InsuranceExpire ch = new InsuranceExpire();
+//       int days = ch.getDaysToExpire();
+//        ch.checkplate(days,rows);
 //
-//
-        InsuranceExpire ch = new InsuranceExpire();
-       int days = ch.getDaysToExpire();
-        ch.checkplate(days,rows);
-
-
-
 
 
 
