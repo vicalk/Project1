@@ -1,8 +1,14 @@
 package com.project1;
 
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 
 public class InsuranceExpire {
+
+    List<Row> rows ;
 
     public  int getDaysToExpire()  {
 
@@ -28,6 +34,25 @@ public class InsuranceExpire {
 
             }
         }
+
+    }
+    public void checkplate(int days,List<Row> rows) {
+
+        this.rows = rows ;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/M/yyyy");
+        LocalDate expireDate = LocalDate.now().plusDays(days);
+
+
+        for (int i = 0; i < rows.size(); i++) {
+            if(rows.get(i).getDate().isBefore(expireDate)){
+
+                System.out.println(rows.get(i).getPlate()+"  "+rows.get(i).getOwner());
+            }
+        }
+
+
+
+        //System.out.println(dtf.format(now));
 
     }
 
