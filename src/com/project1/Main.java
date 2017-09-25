@@ -12,26 +12,20 @@ public class Main {
 //      dao.readDataBase();
 
        ///////////////////////////   Insert plate in cosole abd check if valid  /////////////////////////////////////////
-
+//
 //      StringForma s = new StringForma();
 //      String PlateNo = s.getPlateNo();
 //      System.out.println("The licence plate number you inputted is: " + PlateNo) ;
 
 
-        ///////////////////////////    Insert insurance date expiry in days /////////////////////////////////////
-
-//      InsuranceExpire i = new InsuranceExpire() ;
-//      int days = i.getDaysToExpire();
-//      System.out.println("Days ti expire are: " + days) ;
 
 
-
-        /////////////////////////////    Import CSV (output list of row objects)   /////////////////////////////
-
+        ///////////////////////////    Import CSV (output list of row objects)   /////////////////////////////
+//
 ////
 //      ImportCSV im =  new ImportCSV();
 //      List<Row> rows = im.importCSV();
-////
+//
 ////
 //      Collections.sort(rows);                 //sorts all the rows ascending (depending on plate number)
 ////
@@ -45,13 +39,21 @@ public class Main {
 //      /////////////////////////////   Write CSV file    /////////////////////////////////////////////
 //
 //        WriteCSV w =  new WriteCSV();
-////        w.writeCSV(rows);
+//        w.writeCSV(rows);
 ////
-////
+/////////////////////////////    Insert insurance date expiry in days /////////////////////////////////////
+
 //        InsuranceExpire ch = new InsuranceExpire();
 //       int days = ch.getDaysToExpire();
 //        ch.checkplate(days,rows);
+////
+//        String s = "ABC-1234";
+//        char ch1 = s.charAt(0);
+//        char ch2 = s.charAt(1);
 //
+//
+
+
 
 
 
