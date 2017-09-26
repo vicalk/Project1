@@ -23,16 +23,19 @@ public class Main {
         ///////////////////////////    Import CSV (output list of row objects)   /////////////////////////////
 //
 ////
-//      ImportCSV im =  new ImportCSV();
-//      List<Row> rows = im.importCSV();
+      ImportCSV im =  new ImportCSV();
+      List<Row> rows = im.importCSV();
 //
 ////
 //      Collections.sort(rows);                 //sorts all the rows ascending (depending on plate number)
-////
-//
-//        for (int i = 0; i < rows.size(); i++) {
-//           System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
-//        }
+        BubbleSort bs =  new BubbleSort();
+         rows = bs.bubblesort(rows);
+
+
+
+        for (int i = 0; i < rows.size(); i++) {
+           System.out.println("| " + rows.get(i).getPlate() +" | "+ rows.get(i).getOwner() +" | "+ rows.get(i).getDate() + " |");
+        }
 //
 //        Collections.sort(rows);
 //
