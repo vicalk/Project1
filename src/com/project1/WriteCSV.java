@@ -5,6 +5,7 @@ import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.time.format.DateTimeFormatter;
 
 
 public class WriteCSV {
@@ -13,8 +14,9 @@ public class WriteCSV {
 
     public void writeCSV(List<Row> rows) {
 
-        String filenameOut = "src//Out.csv";
 
+        String filenameOut = "src//Out.csv";
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("d/M/yyyy");
         BufferedWriter writer = null;
 
 
@@ -33,7 +35,7 @@ public class WriteCSV {
 
             //  String newData = sb.toString();
             for (int i = 0; i < rows.size(); i++) {
-                sb.append(rows.get(i).getPlate()+";"+rows.get(i).getOwner()+";"+rows.get(i).getDate()+"\n");
+                sb.append(rows.get(i).getPlate()+";"+rows.get(i).getOwner()+";"+df.format(rows.get(i).getDate())+"\n");
             }
 
 
